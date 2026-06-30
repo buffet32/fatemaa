@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cinematic birthday celebration experience for Fatema - featuring beautiful memories, interactive gallery, and heartfelt messages.">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Fatema's Birthday | A Cinematic Celebration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Audio -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="Naïka - 1+1 (Official Audio).mp3" type="audio/mpeg">
+    </audio>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Cinematic Loading Screen -->
+    <div class="loading-screen" role="dialog" aria-label="Loading" aria-busy="true">
+        <div class="loading-content">
+            <h1 class="loading-text">Fatema</h1>
+            <div class="loading-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Effects (Decorative - aria-hidden) -->
+    <canvas class="particles-canvas" aria-hidden="true"></canvas>
+    <div class="embers-container" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content" role="main">
+        <!-- 1. Hero Section -->
+        <section class="hero-section full-screen" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in" id="hero-title">Happy Birthday</h1>
+                <h2 class="hero-subtitle fade-in-delay">Fatema</h2>
+                <div class="countdown-container fade-in-delay-2">
+                    <div class="countdown-title">Countdown to Midnight</div>
+                    <div class="countdown-timer" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="hero-description fade-in-delay-3">A celebration of life, love, and unforgettable moments</p>
+                <button class="cta-button glow-button fade-in-delay-3" aria-label="Begin the journey to the next section">Begin the Journey</button>
+            </div>
+            <div class="hero-image-container" aria-hidden="true">
+                <div class="floating-image hero-image">
+                    <img src="fatema main.jpeg" alt="Fatema" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Birthday Message Section -->
+        <section class="section message-section" aria-labelledby="message-title">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal pulsing-title" id="message-title">A Special Message</h2>
+                <article class="message-card scroll-reveal">
+                    <p class="message-text">
+                        Happy Birthday, bestie🥳🎂
+                    </p>
+                    <p class="message-text">
+                        Give me your happiest days and your hardest ones. Give me the moments when you're laughing until your stomach hurts and the moments when all you can do is cry. Let me celebrate your victories but also sit beside you through your battles. You never have to pretend to be okay with me.
+                    </p>
+                    <p class="message-text">
+                        Don't just share your dreams with me, share your fears too. Tell me about the things that keep you awake at night, the worries you hide from everyone else and the parts of yourself you think no one would understand. I want to know every version of you because every version deserves to be loved.
+                    </p>
+                    <p class="message-text">
+                        Show me your smile but don't hide your tears. Show me your strength but don't be afraid to show me your scars. You don't have to carry everything alone. If life ever feels too heavy, let me help you carry it.
+                    </p>
+                    <p class="message-text">
+                        I don't want to be your best friend only when life is easy. I want to be there when everything is falling apart. I want to remind you who you are when you forget, believe in you when you can't believe in yourself, and hold your hand through every storm until the sun shines again ❤️
+                    </p>
+                    <p class="message-text">
+                        Thank you for being the kind, beautiful soul that you are. Thank you for every memory, every laugh, every conversation and every moment you've given me. My life is better because you're in it and I will never stop being grateful for that.
+                    </p>
+                    <p class="message-text">
+                        As you grow older, I hope you never lose the light that makes you you. I hope this year brings you peace after every hardship, joy after every sadness and countless reasons to smile. May Allah bless you with endless happiness, protect your heart, answer every du'a you've whispered and grant you a future even more beautiful than your dreams.
+                    </p>
+                    <p class="message-text">
+                        No matter where life takes us, I hope you always know this: you'll never have to face it alone. I'll be here for the sunshine, for the storms and for every chapter in between.
+                    </p>
+                    <p class="message-text signature">
+                        Happy Birthday❤️❤️❤️ sweetie, you are one of the greatest gifts life has ever given me and I love you with all my heart.❤️❤️❤️❤️
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. Beautiful Memories Section -->
+        <section class="section memories-section full-screen" aria-labelledby="memories-title">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal pulsing-title" id="memories-title">Beautiful Memories</h2>
+                <div class="memories-grid" role="list">
+                    <article class="memory-card scroll-reveal" role="listitem">
+                        <div class="memory-image zoom-image">
+                            <img src="first meeting.jpeg" alt="First meeting memory" loading="lazy">
+                        </div>
+                        <h3 class="memory-title">First Meeting</h3>
+                        <p class="memory-description">The day our paths crossed and everything changed</p>
+                    </article>
+                    <article class="memory-card scroll-reveal" role="listitem">
+                        <div class="memory-image zoom-image">
+                            <img src="adventure.jpeg" alt="Adventure together memory" loading="lazy">
+                        </div>
+                        <h3 class="memory-title">Adventure Together</h3>
+                        <p class="memory-description">Exploring the world, one adventure at a time</p>
+                    </article>
+                    <article class="memory-card scroll-reveal" role="listitem">
+                        <div class="memory-image zoom-image">
+                            <img src="celeb.jpeg" alt="Celebrations memory" loading="lazy">
+                        </div>
+                        <h3 class="memory-title">Celebrations</h3>
+                        <p class="memory-description">Every moment worth celebrating together</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Gallery Section -->
+        <section class="section gallery-section full-screen" aria-labelledby="gallery-title">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal pulsing-title" id="gallery-title">Interactive Gallery</h2>
+                <p class="section-text scroll-reveal">Click on any image to view it in fullscreen</p>
+                <div class="image-gallery scroll-reveal" role="list" aria-label="Image gallery">
+                    <button class="gallery-item floating-image" data-fullsize="pic1.jpeg" aria-label="View portrait image in fullscreen" role="listitem">
+                        <img src="pic1.jpeg" alt="Portrait" loading="lazy">
+                        <div class="gallery-overlay" aria-hidden="true">
+                            <span class="gallery-icon" aria-hidden="true">+</span>
+                        </div>
+                    </button>
+                    <button class="gallery-item floating-image" data-fullsize="pic2.jpeg" aria-label="View smile image in fullscreen" role="listitem">
+                        <img src="pic2.jpeg" alt="Smile" loading="lazy">
+                        <div class="gallery-overlay" aria-hidden="true">
+                            <span class="gallery-icon" aria-hidden="true">+</span>
+                        </div>
+                    </button>
+                    <button class="gallery-item floating-image" data-fullsize="pic3.jpeg" aria-label="View joy image in fullscreen" role="listitem">
+                        <img src="pic3.jpeg" alt="Joy" loading="lazy">
+                        <div class="gallery-overlay" aria-hidden="true">
+                            <span class="gallery-icon" aria-hidden="true">+</span>
+                        </div>
+                    </button>
+                    <button class="gallery-item floating-image" data-fullsize="pic4.jpeg" aria-label="View memory image in fullscreen" role="listitem">
+                        <img src="pic4.jpeg" alt="Memory" loading="lazy">
+                        <div class="gallery-overlay" aria-hidden="true">
+                            <span class="gallery-icon" aria-hidden="true">+</span>
+                        </div>
+                    </button>
+                    <button class="gallery-item floating-image" data-fullsize="pic5.jpeg" aria-label="View adventure image in fullscreen" role="listitem">
+                        <img src="pic5.jpeg" alt="Adventure" loading="lazy">
+                        <div class="gallery-overlay" aria-hidden="true">
+                            <span class="gallery-icon" aria-hidden="true">+</span>
+                        </div>
+                    </button>
+                    <button class="gallery-item floating-image" data-fullsize="pic6.jpeg" aria-label="View celebration image in fullscreen" role="listitem">
+                        <img src="pic6.jpeg" alt="Celebration" loading="lazy">
+                        <div class="gallery-overlay" aria-hidden="true">
+                            <span class="gallery-icon" aria-hidden="true">+</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Favorite Moments Section -->
+        <section class="section moments-section full-screen">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal pulsing-title">Favorite Moments</h2>
+                <div class="wishes-container">
+                    <div class="wish-card scroll-reveal">
+                        <p class="wish-text">"That time we laughed until our sides hurt, creating memories that would last a lifetime"</p>
+                        <span class="wish-author">- Unforgettable Joy</span>
+                    </div>
+                    <div class="wish-card scroll-reveal">
+                        <p class="wish-text">"The quiet moments we shared, where words weren't needed but everything was understood"</p>
+                        <span class="wish-author">- Silent Connection</span>
+                    </div>
+                    <div class="wish-card scroll-reveal">
+                        <p class="wish-text">"Every challenge we faced together, emerging stronger and closer than before"</p>
+                        <span class="wish-author">- Growing Together</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Secret Letter Section -->
+        <section class="section letter-section full-screen">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal pulsing-title">A Secret Letter</h2>
+                <div class="letter-container scroll-reveal">
+                    <div class="letter-paper">
+                        <p class="letter-text">
+                            My little secret 🥺❤️
+                        </p>
+                        <p class="letter-text">
+                            If I could choose my best friend in every lifetime, every city and every version of this world, I'd choose you every single time.
+                        </p>
+                        <p class="letter-text">
+                            Happy Birthday, my favorite person. Please never forget how deeply you are loved.
+                        </p>
+                        <p class="letter-text signature">
+                            Forever your best friend. ❤️✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Final Surprise Section -->
+        <section class="section surprise-section full-screen">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal pulsing-title">A Final Surprise</h2>
+                <p class="section-text scroll-reveal">
+                    Close your eyes, make a wish, and let the magic begin. 
+                    This is your day, Fatema. You deserve all the happiness in the world.
+                </p>
+                <div class="surprise-content scroll-reveal">
+                    <div class="surprise-icon">🎂</div>
+                    <p class="surprise-message">Happy Birthday, Fatema!</p>
+                    <p class="surprise-subtitle">May all your dreams come true ✨</p>
+                </div>
+                <button class="cta-button glow-button scroll-reveal">Make a Wish</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image gallery modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <button class="modal-prev" id="modalPrev" aria-label="Previous image">&#10094;</button>
+            <button class="modal-next" id="modalNext" aria-label="Next image">&#10095;</button>
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <figcaption class="modal-caption" id="modalCaption"></figcaption>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
