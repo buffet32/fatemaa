@@ -30,36 +30,57 @@ document.addEventListener('click', () => {
 // ============================================
 // CUSTOM CURSOR
 // ============================================
+const customCursor = document.getElementById('custom-cursor');
+const cursorImage = document.querySelector('.cursor-image');
+
+// Move custom cursor with mouse
+document.addEventListener('mousemove', (e) => {
+    if (customCursor) {
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
+    }
+});
+
+// Change cursor on click
 document.addEventListener('mousedown', () => {
-    document.body.classList.add('cursor-click');
+    if (customCursor) {
+        customCursor.classList.add('clicking');
+        cursorImage.src = 'normal.png';
+    }
 });
 
 document.addEventListener('mouseup', () => {
-    document.body.classList.remove('cursor-click');
+    if (customCursor) {
+        customCursor.classList.remove('clicking');
+        cursorImage.src = 'gm.png';
+    }
+});
+
+// Hide cursor when leaving window
+document.addEventListener('mouseleave', () => {
+    if (customCursor) {
+        customCursor.style.opacity = '0';
+    }
+});
+
+document.addEventListener('mouseenter', () => {
+    if (customCursor) {
+        customCursor.style.opacity = '1';
+    }
 });
 
 // ============================================
 // COUNTDOWN TIMER
 // ============================================
 function updateCountdown() {
-    const targetDate = new Date('2026-06-30T00:00:00').getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
 
-    if (difference > 0) {
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-    } else {
-        // Countdown has reached zero
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
-    }
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
 // Update countdown every second

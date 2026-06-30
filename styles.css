@@ -98,11 +98,28 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: url('gm.png'), auto;
+    cursor: none;
 }
 
-body.cursor-click {
-    cursor: url('normal.png'), auto;
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    width: 96px;
+    height: 96px;
+    transform: translate(-50%, -50%);
+    transition: none;
+}
+
+.cursor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.custom-cursor.clicking .cursor-image {
+    content: url('normal.png');
 }
 
 /* Skip Link for Accessibility */
